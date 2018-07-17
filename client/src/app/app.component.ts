@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  systemTitle = 'Template Driven Form 0.1';
-  systemDescrip = 'Cear HTML';
+  systemTitle = 'Template Driven Form 0.2';
+  systemDescrip = 'Bing Data';
 
   formTemas = ['Angular', 'React', 'VueJs'];
 }
