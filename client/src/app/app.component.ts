@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from './user';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   systemTitle = 'Template Driven Form 0.2';
-  systemDescrip = 'Bing Data';
+  systemDescrip = 'Enlazar datos a un modelo';
 
   formTemas = ['Angular', 'React', 'VueJs'];
+  userModel = new User('Rob', 'rob@test.com', 584169295877, 'default', 'mañana', true);
+
 }
