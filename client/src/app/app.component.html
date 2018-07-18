@@ -23,10 +23,18 @@
               <div class="form-group">
                 <label for=""> Nombre </label>
                 <input type="text" class="form-control"
-                  name="nombre" [(ngModel)]="userModel.nombre" 
+                  required #name="ngModel" name="nombre" [(ngModel)]="userModel.nombre" 
                 >
               </div>
-  
+              <div class="text-success">
+                untouched: {{ name.untouched }} |
+                touched: {{ name.touched }} |
+                dirty: {{ name.dirty }} |
+                pristine: {{ name.pristine }} |
+                valid: {{ name.valid }} |
+                invalid: {{ name.invalid }}
+              </div>
+
               <div class="form-group">
                 <label for="">Email</label>
                 <input type="email" class="form-control"
