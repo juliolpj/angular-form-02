@@ -26,6 +26,7 @@
                   [class.is-invalid]="name.invalid && name.touched" required 
                   #name="ngModel" name="nombre" [(ngModel)]="userModel.nombre" 
                 >
+                <small class="text-danger" [class.d-none]="name.valid || name.untouched"> El nombre es requerido</small>
               </div>
 
               <div class="form-group">
@@ -38,9 +39,13 @@
               <div class="form-group">
                 <label for="">Teléfono</label>
                 <input type="tel" class="form-control"
-                pattern="^\d{10}$" [class.is-invalid]="telefono.invalid && telefono.touched"
+                required pattern="^\d{12}$" [class.is-invalid]="telefono.invalid && telefono.touched"
                 #telefono="ngModel" name="telefono" [(ngModel)]="userModel.telefono"
                 >
+                <div *ngIf="telefono.errors">
+                  <small *ngIf="telefono.errors.required" class="text-danger">EL teléfono es requerido</small>
+                  <small *ngIf="telefono.errors.pattern" class="text-danger">EL teléfono debe tener 12 dígitos</small>
+                </div>
               </div>
   
               <div class="form-group">

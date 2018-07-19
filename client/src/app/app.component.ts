@@ -7,8 +7,8 @@ import { User } from './user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  systemTitle = 'Template Driven Form 0.4';
-  systemDescrip = 'Validación y feedback visual';
+  systemTitle = 'Template Driven Form 0.5';
+  systemDescrip = 'Mostrar mendajes de error';
 
   formTemas = ['Angular', 'React', 'VueJs'];
   userModel = new User('', 'rob@test.com', 584169295877, 'default', 'mañana', true);
