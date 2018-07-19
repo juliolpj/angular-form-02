@@ -18,7 +18,7 @@
           </div>
   
           <div class="card-body">
-            <form #userForm="ngForm">
+            <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
   
               <div class="form-group">
                 <label for=""> Nombre </label>
