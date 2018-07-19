@@ -86,7 +86,9 @@
                 <label for="" class="form-check-label">Recibir promociones</label>
               </div>
   
-              <button class="btn btn-primary btn-block">
+              <button 
+                [disabled]="userForm.form.invalid || formTemaTieneError"
+                class="btn btn-primary btn-block">
                 Enviar
               </button>
             </form>

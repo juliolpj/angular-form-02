@@ -8,8 +8,8 @@ import { log } from 'util';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  systemTitle = 'Template Driven Form 0.6';
-  systemDescrip = 'Validación del control select';
+  systemTitle = 'Template Driven Form 0.7';
+  systemDescrip = 'Validación del formulario';
 
   formTemas = ['Angular', 'React', 'VueJs'];
   formTemaTieneError = true;
