@@ -22,17 +22,10 @@
   
               <div class="form-group">
                 <label for=""> Nombre </label>
-                <input type="text" class="form-control"
-                  required #name="ngModel" name="nombre" [(ngModel)]="userModel.nombre" 
+                <input type="text" class="form-control" 
+                  [class.is-invalid]="name.invalid && name.touched" required 
+                  #name="ngModel" name="nombre" [(ngModel)]="userModel.nombre" 
                 >
-              </div>
-              <div class="text-success">
-                untouched: {{ name.untouched }} |
-                touched: {{ name.touched }} |
-                dirty: {{ name.dirty }} |
-                pristine: {{ name.pristine }} |
-                valid: {{ name.valid }} |
-                invalid: {{ name.invalid }}
               </div>
 
               <div class="form-group">
@@ -45,7 +38,8 @@
               <div class="form-group">
                 <label for="">Teléfono</label>
                 <input type="tel" class="form-control"
-                  name="telefono" [(ngModel)]="userModel.telefono"
+                pattern="^\d{10}$" [class.is-invalid]="telefono.invalid && telefono.touched"
+                #telefono="ngModel" name="telefono" [(ngModel)]="userModel.telefono"
                 >
               </div>
   
