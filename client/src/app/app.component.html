@@ -51,11 +51,14 @@
               <div class="form-group">
                 <label for="">Temas</label>
                 <select class="custom-select"
-                  name="tema" [(ngModel)]="userModel.tema"
+                  (blur)="validarTema(tema.value)" (change)="validarTema(tema.value)"
+                  [class.is-invalid]="formTemaTieneError && tema.touched"
+                  #tema="ngModel" name="tema" [(ngModel)]="userModel.tema"
                 >
                   <option value="default">Estoy interesado en</option>
                   <option *ngFor="let tema of formTemas"> {{ tema }} </option>
                 </select>
+                <small class="text-danger" [class.d-none]="!formTemaTieneError || tema.untouched" >Seleccione un tema</small>
               </div>
   
               <div class="row mb-3">

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from './user';
+import { log } from 'util';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,19 @@ import { User } from './user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  systemTitle = 'Template Driven Form 0.5';
-  systemDescrip = 'Mostrar mendajes de error';
+  systemTitle = 'Template Driven Form 0.6';
+  systemDescrip = 'Validación del control select';
 
   formTemas = ['Angular', 'React', 'VueJs'];
-  userModel = new User('', 'rob@test.com', 584169295877, 'default', 'mañana', true);
+  formTemaTieneError = true;
 
+  userModel = new User('Rob', 'rob@test.com', 584169295877, 'default', 'mañana', true);
+
+  validarTema(value) {
+    if (value === 'default') {
+      this.formTemaTieneError = true;
+    } else {
+      this.formTemaTieneError = false;
+    }
+  }
 }
